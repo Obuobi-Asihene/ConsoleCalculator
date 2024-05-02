@@ -63,7 +63,9 @@ while (continueCalcuating)
                 }
                 break;
 
-            
+            case '*':
+                result = numbers.Aggregate((acc, x) => acc * x);
+                break;
 
             default:
                 Console.WriteLine("Invalid Operation. Try again");

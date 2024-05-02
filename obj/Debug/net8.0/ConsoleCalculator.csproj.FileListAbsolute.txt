@@ -12,3 +12,4 @@ C:\Users\Yakubu\source\repos\ConsoleCalculator\obj\Debug\net8.0\refint\ConsoleCa
 C:\Users\Yakubu\source\repos\ConsoleCalculator\obj\Debug\net8.0\ConsoleCalculator.pdb
 C:\Users\Yakubu\source\repos\ConsoleCalculator\obj\Debug\net8.0\ConsoleCalculator.genruntimeconfig.cache
 C:\Users\Yakubu\source\repos\ConsoleCalculator\obj\Debug\net8.0\ref\ConsoleCalculator.dll
+C:\Users\Yakubu\source\repos\ConsoleCalculator\obj\Debug\net8.0\ConsoleCalculator.sourcelink.json

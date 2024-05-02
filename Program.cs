@@ -20,21 +20,30 @@ while (continueCalcuating)
     if (input.Length == 1 && "+-*/".Contains(input))
     {
         optn = input[0];
-        Console.WriteLine($"Enter the first number:");
-        double num1;
+        Console.WriteLine($"Enter numbers to calculator:");
 
-        if (!double.TryParse(Console.ReadLine(), out num1))
+        string[] numberInputs = Console.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        if (numberInputs.Length < 2)
         {
-            Console.WriteLine("Invalid input. Enter a valid number.");
+            Console.WriteLine("Invalid Input. Enter at least 2 numbers");
             continue;
         }
 
-        Console.WriteLine($"Enter the second number:");
-        double num2;
+        double[] numbers = new double[numberInputs.Length];
+        bool isValidInput = true;
 
-        if (!double.TryParse(Console.ReadLine(), out num2))
+        for (int i = 0; i < numberInputs.Length; i++)
         {
-            Console.WriteLine("Invalid input. Enter a valid number.");
+            if (!double.TryParse(numberInputs[i], out numbers[i]))
+            {
+                Console.WriteLine($"Invalid input: '{numberInputs[i]}'. Enter valid numbers");
+                isValidInput = false;
+                break;
+            }
+        }
+
+        if (!isValidInput)
+        {
             continue;
         }
 
@@ -43,32 +52,13 @@ while (continueCalcuating)
         switch (optn)
         {
             case '+':
-                result = num1 + num2;
+                result = numbers.Sum();
                 break;
 
-            case '-':
-                result = num1 - num2;
-                break;
-
-            case '*':
-                result = num1 * num2;
-                break;
-
-            case '/':
-                if (num2 == 0)
-                {
-                    Console.WriteLine("Error: Cannot divide by zero.");
-                    continue;
-                }
-                result = num1 / num2;
-                break;
-
-            default:
-                Console.WriteLine("Invalid Operation. Try again");
-                continue;
+            
         }
 
-        Console.WriteLine($"Result: {num1} {optn} {num2} = {result}");
+        Console.WriteLine($"Result: {string.Join(" " + optn + " ", numbers)} = {result}");
     }
     else
     {

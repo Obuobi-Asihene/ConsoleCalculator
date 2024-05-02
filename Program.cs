@@ -55,7 +55,19 @@ while (continueCalcuating)
                 result = numbers.Sum();
                 break;
 
+            case '-':
+                result = numbers[0];
+                for (int i = 1; i < numbers.Length; i++)
+                {
+                    result -= numbers[i];
+                }
+                break;
+
             
+
+            default:
+                Console.WriteLine("Invalid Operation. Try again");
+                continue;
         }
 
         Console.WriteLine($"Result: {string.Join(" " + optn + " ", numbers)} = {result}");

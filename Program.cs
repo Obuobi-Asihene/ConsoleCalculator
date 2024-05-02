@@ -67,6 +67,21 @@ while (continueCalcuating)
                 result = numbers.Aggregate((acc, x) => acc * x);
                 break;
 
+            case '/':
+                bool divideByZero = false;
+                result = numbers[0];
+                for (int i = 1; i < numbers.Length; i++)
+                {
+                    if (numbers[i] == 0)
+                    {
+                        Console.WriteLine("Error: Cannot divide by zero.");
+                        divideByZero = true;
+                        break;
+                    }
+                    result /= numbers[i];
+                }
+                break;
+
             default:
                 Console.WriteLine("Invalid Operation. Try again");
                 continue;
